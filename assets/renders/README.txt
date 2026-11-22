@@ -1,16 +1,12 @@
-DROP RENDERS HERE
+SCREENSHOTS
 
-Expected file names (the gallery reads exactly these):
-  render_01.jpg
-  render_02.jpg
-  render_03.jpg
-  render_04.jpg
-  render_05.jpg
-  render_06.jpg
+Currently on the page (in this order):
+  render_01.jpg  Starting platform
+  render_02.jpg  Fog line
+  render_03.jpg  Tower shaft
 
-Any slot without a file shows a styled "NO SIGNAL" placeholder and is
-skipped by the lightbox - so 4 renders instead of 6 is fine.
+To add more: drop render_04.jpg, render_05.jpg ... here and copy one <li>
+block in index.html (section "Screenshots"), changing the file name and caption.
 
-Recommended: 1920x1200 (16:10), JPG quality ~82, under 500 KB each.
-If you use .png or .webp instead, change the src/captions in index.html
-(block: <div class="gallery">).
+Recommended: 1920x1080, JPG quality ~85, under 500 KB each.
+A slot whose file is missing shows a dashed "no screenshot yet" box.
