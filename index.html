@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACK — Custom Map for White Knuckle</title>
+<meta name="description" content="TRACK — custom megacomplex map and gameplay mod for White Knuckle. 15 radar stations, escalating pursuers, evacuation elevator.">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div id="archnavbar">
+  <div class="wrap">
+    <span id="logo">TRACK</span>
+    <ul id="archnavbarlist">
+      <li><a href="#download">Download</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#notes">Release Notes</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="content" class="wrap">
+
+  <h1>TRACK</h1>
+  <p class="intro">
+    Custom megacomplex map and gameplay mod for
+    <a href="https://store.steampowered.com/app/2614680/White_Knuckle/" rel="noopener">White&nbsp;Knuckle</a>.
+    A 360° brutalist concrete structure suspended in fog: fifteen radar towers, a rising Mass,
+    and one evacuation elevator out.
+  </p>
+
+  <h2 id="download">Download</h2>
+
+  <p class="dl">
+    <a class="dl-link" href="./downloads/TRACK_v1.0.zip" download>TRACK_v1.0.zip</a>
+    <span class="dl-meta">(<span data-field="size">-- MB</span>)</span>
+  </p>
+
+  <table class="release">
+    <tr><th>Current release</th><td data-field="version">1.0</td></tr>
+    <tr><th>Requires</th><td>White Knuckle, BepInEx 5, WKMapLoader</td></tr>
+    <tr><th>File size</th><td data-field="size">-- MB</td></tr>
+    <tr>
+      <th>SHA-256</th>
+      <td><code data-field="sha256">0000000000000000000000000000000000000000000000000000000000000000</code>
+        <a class="copy" href="#" data-copy-from="[data-field=sha256]">copy</a></td>
+    </tr>
+  </table>
+
+  <p>See the <a href="#install">installation instructions</a> below.</p>
+
+  <h2 id="screenshots">Screenshots</h2>
+
+  <ul class="shots" id="shots">
+    <li><a href="./assets/renders/render_01.jpg"><img src="./assets/renders/render_01.jpg" alt="Starting platform" loading="lazy"><span>Starting platform</span></a></li>
+    <li><a href="./assets/renders/render_02.jpg"><img src="./assets/renders/render_02.jpg" alt="Radar deck" loading="lazy"><span>Radar deck</span></a></li>
+    <li><a href="./assets/renders/render_03.jpg"><img src="./assets/renders/render_03.jpg" alt="Fog line" loading="lazy"><span>Fog line</span></a></li>
+    <li><a href="./assets/renders/render_04.jpg"><img src="./assets/renders/render_04.jpg" alt="Vending corner" loading="lazy"><span>Vending corner</span></a></li>
+    <li><a href="./assets/renders/render_05.jpg"><img src="./assets/renders/render_05.jpg" alt="Pursuer contact" loading="lazy"><span>Pursuer contact</span></a></li>
+    <li><a href="./assets/renders/render_06.jpg"><img src="./assets/renders/render_06.jpg" alt="Tether elevator" loading="lazy"><span>Tether elevator</span></a></li>
+  </ul>
+
+  <h2 id="about">About the map</h2>
+
+  <ul>
+    <li>360° endless brutalist concrete megastructure suspended in thick fog.</li>
+    <li>Activate all 15 custom Radar stations across 15 towers to pump down the rising Mass.</li>
+    <li>Survive escalating Dead Face / Remains pursuers stalking through the mist.</li>
+    <li>Scavenge Rusty, Gold and Platinum Roaches and restock at unlimited corner Vending Machines
+        (Injector, Blink Eye, Pills).</li>
+    <li>Unlock and ascend the Tether Evacuation Elevator at the starting tower once all 15 Radars
+        are online.</li>
+  </ul>
+
+  <h2 id="install">Installation</h2>
+
+  <p>Requirements: White Knuckle with <a href="https://github.com/BepInEx/BepInEx" rel="noopener">BepInEx&nbsp;5</a>
+     and WKMapLoader installed.</p>
+
+  <ol class="steps">
+    <li>
+      Extract <code>TRACK_v1.0.zip</code> into your plugins folder:
+      <code class="path">White Knuckle/BepInEx/plugins/</code>
+      <a class="copy" href="#" data-copy="White Knuckle/BepInEx/plugins/">copy</a>
+      <br>The archive contains <code>TrackAppearance/</code>, <code>StationMap/</code> and
+      <code>WKMapLoader/maps/TRACK_start_test.*</code> — keep the folder structure intact:
+<pre>White Knuckle/
+└── BepInEx/
+    └── plugins/
+        ├── TrackAppearance/
+        ├── StationMap/
+        └── WKMapLoader/
+            └── maps/
+                └── TRACK_start_test.*</pre>
+    </li>
+    <li>Launch White Knuckle, open <strong>Custom Maps</strong> and select <strong>TRACK Start Test</strong>.</li>
+    <li>No console commands required — everything starts automatically.</li>
+  </ol>
+
+  <h2 id="notes">Release notes</h2>
+
+  <h3>v1.0</h3>
+  <ul>
+    <li>TRACK megacomplex: 15 towers, 360° looping layout in heavy fog.</li>
+    <li>15 custom Radar stations wired to the Mass pump-down system.</li>
+    <li>Tether Evacuation Elevator at the starting tower, unlocked at 15/15 Radars.</li>
+    <li>Escalating Dead Face / Remains pursuer waves.</li>
+    <li>Unlimited corner Vending Machines: Injector, Blink Eye, Pills.</li>
+    <li>Rusty / Gold / Platinum Roach economy across the sector.</li>
+    <li>No console commands: the map starts automatically on load.</li>
+  </ul>
+
+  <h2 id="credits">Credits</h2>
+
+  <!-- AUTHOR: name and links -->
+  <table class="release">
+    <tr><th>Map &amp; mod</th><td data-field="author">YOUR NAME HERE</td></tr>
+    <tr><th>Built on</th><td>BepInEx 5, WKMapLoader</td></tr>
+    <tr><th>Game</th><td>White Knuckle by Dark Machine Games</td></tr>
+    <tr><th>Links</th><td>
+      <a href="#" data-link="discord">Discord</a> &middot;
+      <a href="#" data-link="youtube">YouTube</a> &middot;
+      <a href="#" data-link="source">Source</a>
+    </td></tr>
+  </table>
+
+</div>
+
+<div id="footer" class="wrap">
+  <p>Unofficial fan-made content. Not affiliated with or endorsed by the developers of White Knuckle.</p>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
