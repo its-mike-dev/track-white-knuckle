@@ -202,3 +202,6 @@ code.path { font-size: 13px; }
   table.release th { width: auto; display: block; padding-bottom: 0; border-bottom: 0; }
   table.release td { display: block; padding-left: 0; }
 }
+
+/* rows / sections the author has not filled in yet */
+.unset { display: none; }

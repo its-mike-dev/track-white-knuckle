@@ -45,6 +45,31 @@
     });
   });
 
+  /* support rows: a row whose address is still the "…" placeholder (or whose link is
+     still href="#") is hidden; if none of them is filled in, the section goes away too */
+  (function () {
+    var rows = document.querySelectorAll('#support-table tr');
+    if (!rows.length) return;
+    var hidden = 0;
+    Array.prototype.forEach.call(rows, function (tr) {
+      var code = tr.querySelector('code[data-field]');
+      var link = tr.querySelector('a[data-link]');
+      var unset = (code && code.textContent.indexOf('…') !== -1) ||
+                  (link && link.getAttribute('href') === '#');
+      if (unset) {
+        tr.className = 'unset';
+        hidden++;
+      }
+    });
+    if (hidden < rows.length) return;
+    ['support', 'support-intro', 'support-table'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.className = 'unset';
+    });
+    var nav = document.querySelector('#archnavbarlist a[href="#support"]');
+    if (nav && nav.parentNode) nav.parentNode.className = 'unset';
+  })();
+
   /* placeholder links do nothing until the author fills them in */
   Array.prototype.forEach.call(document.querySelectorAll('a[data-link]'), function (a) {
     a.addEventListener('click', function (e) {

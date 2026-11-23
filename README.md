@@ -23,12 +23,18 @@ downloads/      TRACK_v1.0.zip                   (release archive)
 | Version | `index.html` — `data-field="version"`, the `href` and text of the download link, `<title>` |
 | Author name | `index.html` — `data-field="author"` |
 | Discord / YouTube / Source | `index.html` — `<a data-link="...">`, replace `href="#"` |
+| Tip jar link | `index.html` — `<a data-link="tipjar">`, replace `href="#"` |
+| Wallet addresses | `index.html` — `data-field="wallet-btc"`, `wallet-eth`, `wallet-usdt`, `wallet-ton` |
 
 Get the hash with:
 
 ```bash
 sha256sum downloads/TRACK_v1.0.zip
 ```
+
+The Support section hides itself: any row whose address still holds the `…` placeholder
+is dropped, and if you fill in none of them the heading, the table and the nav entry all
+disappear — so leaving it untouched costs nothing. Delete the rows for coins you don't use.
 
 Screenshots that are not present show a dashed "no screenshot yet" box instead of a
 broken image. Each thumbnail links to the full-size file.
