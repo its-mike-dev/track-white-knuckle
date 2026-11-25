@@ -1,7 +1,7 @@
 DROP THE RELEASE ARCHIVE HERE
 
 Exact expected name (hard-coded in the download button):
-  TRACK_v1.0.zip
+  SISYPHUS_15_v1.0.zip
 
 Archive root must contain:
   TrackAppearance/
@@ -9,3 +9,4 @@ Archive root must contain:
   WKMapLoader/maps/TRACK_start_test.*
 
 so that unpacking into White Knuckle/BepInEx/plugins/ lands correctly.
+(The internal folder names stay as built — only the public map name changed.)

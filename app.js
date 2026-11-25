@@ -1,4 +1,5 @@
-/* TRACK — minimal page script: copy links + missing screenshot slots. */
+/* SISYPHUS // 15 — minimal page script: copy links, missing screenshot slots,
+   and hiding the link slots the author has not filled in yet. */
 (function () {
   'use strict';
 
@@ -11,7 +12,7 @@
     else { img.addEventListener('error', missing); }
   });
 
-  /* "copy" links next to the plugins path and the checksum */
+  /* "copy" links next to the plugins path, the checksum and the wallets */
   function copy(text) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).catch(fallback);
@@ -45,35 +46,24 @@
     });
   });
 
-  /* support rows: a row whose address is still the "…" placeholder (or whose link is
-     still href="#") is hidden; if none of them is filled in, the section goes away too */
-  (function () {
-    var rows = document.querySelectorAll('#support-table tr');
-    if (!rows.length) return;
-    var hidden = 0;
-    Array.prototype.forEach.call(rows, function (tr) {
-      var code = tr.querySelector('code[data-field]');
-      var link = tr.querySelector('a[data-link]');
-      var unset = (code && code.textContent.indexOf('…') !== -1) ||
-                  (link && link.getAttribute('href') === '#');
-      if (unset) {
-        tr.className = 'unset';
-        hidden++;
-      }
-    });
-    if (hidden < rows.length) return;
-    ['support', 'support-intro', 'support-table'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) el.className = 'unset';
-    });
-    var nav = document.querySelector('#archnavbarlist a[href="#support"]');
-    if (nav && nav.parentNode) nav.parentNode.className = 'unset';
-  })();
-
-  /* placeholder links do nothing until the author fills them in */
+  /* a placeholder link (still href="#") hides its slot — the row or the inline span
+     marked class="slot" — so an unfilled link never shows up as a dead link */
   Array.prototype.forEach.call(document.querySelectorAll('a[data-link]'), function (a) {
-    a.addEventListener('click', function (e) {
-      if (a.getAttribute('href') === '#') e.preventDefault();
-    });
+    if (a.getAttribute('href') !== '#') return;
+    var slot = a.closest ? a.closest('.slot') : null;
+    (slot || a).className = 'unset';
   });
+
+  /* if nothing at all is left in the optional block, drop the block itself */
+  (function () {
+    var table = document.getElementById('optional-table');
+    var block = document.getElementById('optional');
+    if (!table || !block) return;
+    var rows = table.querySelectorAll('tr');
+    var shown = 0;
+    Array.prototype.forEach.call(rows, function (tr) {
+      if (tr.className.indexOf('unset') === -1) shown++;
+    });
+    if (!shown) block.className = 'unset';
+  })();
 })();

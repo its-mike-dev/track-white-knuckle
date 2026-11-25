@@ -205,3 +205,18 @@ code.path { font-size: 13px; }
 
 /* rows / sections the author has not filled in yet */
 .unset { display: none; }
+
+/* ---------------- optional block (collapsed) ---------------- */
+
+details#optional {
+  margin: 34px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+}
+details#optional summary {
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+}
+details#optional summary:hover { color: #07b; }
+details#optional table.release { margin: 12px 0 2px; }

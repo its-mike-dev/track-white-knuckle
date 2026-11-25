@@ -3,50 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TRACK — Custom Map for White Knuckle</title>
-<meta name="description" content="TRACK — custom megacomplex map and gameplay mod for White Knuckle. 15 radar stations, escalating pursuers, evacuation elevator.">
+<title>SISYPHUS // 15 — Custom Map for White Knuckle</title>
+<meta name="description" content="SISYPHUS // 15 — custom megacomplex map and gameplay mod for White Knuckle. 15 radar stations, escalating pursuers, roof evacuation elevator.">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
 <div id="archnavbar">
   <div class="wrap">
-    <span id="logo">TRACK</span>
+    <span id="logo">SISYPHUS // 15</span>
     <ul id="archnavbarlist">
       <li><a href="#download">Download</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#install">Installation</a></li>
       <li><a href="#notes">Release Notes</a></li>
-      <li><a href="#support">Support</a></li>
     </ul>
   </div>
 </div>
 
 <div id="content" class="wrap">
 
-  <h1>TRACK</h1>
+  <h1>SISYPHUS // 15</h1>
   <p class="intro">
     Custom megacomplex map and gameplay mod for
     <a href="https://store.steampowered.com/app/3195790/White_Knuckle/" rel="noopener">White&nbsp;Knuckle</a>.
-    A 360° brutalist concrete structure suspended in fog: fifteen radar towers, a rising Mass,
+    A 360° brutalist concrete structure suspended in fog: fifteen radar stations, a rising Mass,
     and one evacuation elevator out.
   </p>
 
   <h2 id="download">Download</h2>
 
   <p class="dl">
-    <a class="dl-link" href="./downloads/TRACK_v1.0.zip" download>TRACK_v1.0.zip</a>
+    <a class="dl-link" href="./downloads/SISYPHUS_15_v1.0.zip" download>SISYPHUS_15_v1.0.zip</a>
     <span class="dl-meta">(<span data-field="size">3.34 MB</span>)</span>
   </p>
 
   <table class="release">
     <tr><th>Current release</th><td data-field="version">1.0</td></tr>
-    <tr><th>Requires</th><td>White Knuckle, BepInEx 5, WKMapLoader</td></tr>
+    <tr><th>Requires</th><td>White Knuckle (latest Steam release, v0.70 / build 26870273),
+      BepInEx 5, WKMapLoader 1.3.2</td></tr>
     <tr><th>File size</th><td data-field="size">3.34 MB</td></tr>
     <tr>
       <th>SHA-256</th>
-      <td><code data-field="sha256">9f452b6ad09fe918df00315c2b58a741fef22fc013b5b3e540c70227d2837f8a</code>
+      <td><code data-field="sha256">53209b2660a3edf734d3b05e1208d9fc753d6431382119aa0d77e4e00b4cf5f9</code>
         <a class="copy" href="#" data-copy-from="[data-field=sha256]">copy</a></td>
     </tr>
   </table>
@@ -64,23 +64,26 @@
   <h2 id="about">About the map</h2>
 
   <ul>
-    <li>360° endless brutalist concrete megastructure suspended in thick fog.</li>
-    <li>Activate all 15 custom Radar stations across 15 towers to pump down the rising Mass.</li>
+    <li>360° brutalist concrete megastructure suspended in fog: 573 towers to a 13.2 km horizon,
+        63 of them playable across three sails.</li>
+    <li>Fifteen Radar stations are placed at random every run — five per sail — and pump down the
+        rising Mass as you bring them online.</li>
+    <li>Toggleable tactical radar map covering all three sails (<code>M</code>).</li>
     <li>Survive escalating Dead Face / Remains pursuers stalking through the mist.</li>
     <li>Scavenge Rusty, Gold and Platinum Roaches and restock at unlimited corner Vending Machines
         (Injector, Blink Eye, Pills).</li>
-    <li>Unlock and ascend the Tether Evacuation Elevator at the starting tower once all 15 Radars
-        are online.</li>
+    <li>At 15/15 a green beacon lights over the starting tower: take the Tether Evacuation Elevator
+        on its roof for an instant clear.</li>
   </ul>
 
   <h2 id="install">Installation</h2>
 
   <p>Requirements: White Knuckle with <a href="https://github.com/BepInEx/BepInEx" rel="noopener">BepInEx&nbsp;5</a>
-     and WKMapLoader installed.</p>
+     and WKMapLoader 1.3.2 installed.</p>
 
   <ol class="steps">
     <li>
-      Extract <code>TRACK_v1.0.zip</code> into your plugins folder:
+      Extract <code>SISYPHUS_15_v1.0.zip</code> into your plugins folder:
       <code class="path">White Knuckle/BepInEx/plugins/</code>
       <a class="copy" href="#" data-copy="White Knuckle/BepInEx/plugins/">copy</a>
       <br>The archive contains <code>TrackAppearance/</code>, <code>StationMap/</code> and
@@ -94,7 +97,11 @@
             └── maps/
                 └── TRACK_start_test.*</pre>
     </li>
-    <li>Launch White Knuckle, open <strong>Custom Maps</strong> and select <strong>TRACK</strong>.</li>
+    <li>Launch White Knuckle, open <strong>Custom Maps</strong> and select <strong>SISYPHUS&nbsp;//&nbsp;15</strong>.</li>
+    <li>Press <code>M</code> in game to cycle the tactical map: compact, expanded, off.
+      Key and startup state can be changed in
+      <code class="path">BepInEx/config/local.whiteknuckle.stations.cfg</code>
+      (<code>MapToggleKey</code>, <code>ShowTacticalMap</code>).</li>
     <li>No console commands required — everything starts automatically.</li>
   </ol>
 
@@ -102,7 +109,7 @@
 
   <h3>v1.0</h3>
   <ul>
-    <li>TRACK megacomplex: 3 playable brutalist sails (±10 towers each) inside a 360° fog horizon.</li>
+    <li>SISYPHUS // 15 megacomplex: 3 playable brutalist sails (21 towers each) inside a 360° fog horizon.</li>
     <li>15 custom Radar stations with soft red aviation tower beacons wired to the Mass pump-down system.</li>
     <li>Toggleable 3-sail tactical radar map (<code>M</code>: compact / expanded / off).</li>
     <li>Roof Tether Evacuation Elevator unlocked at 15/15 Radars with instant clean clear.</li>
@@ -112,44 +119,46 @@
     <li>No console commands: everything starts automatically on load.</li>
   </ul>
 
-  <h2 id="support">Support</h2>
-
-  <p id="support-intro">TRACK is free and always will be. If you want to chip in anyway:</p>
-
-  <!-- AUTHOR: paste your own link / addresses here. Any row still holding the "…"
-       placeholder is hidden automatically, and if you fill in none of them the whole
-       Support section (and its nav entry) disappears, so the page never looks half-done. -->
-  <table class="release" id="support-table">
-    <tr>
-      <th>Ethereum / Base</th>
-      <td><code data-field="wallet-eth">0xD9BeB139E57F91c0851ce076aa109334de6116Eb</code>
-        <a class="copy" href="#" data-copy-from="[data-field=wallet-eth]">copy</a></td>
-    </tr>
-    <tr>
-      <th>Solana</th>
-      <td><code data-field="wallet-sol">6C8fA8g7x1P827MHWAPgfwzLo2iNZuTbfZeMXZP7Yyxr</code>
-        <a class="copy" href="#" data-copy-from="[data-field=wallet-sol]">copy</a></td>
-    </tr>
-    <tr>
-      <th>TON</th>
-      <td><code data-field="wallet-ton">UQBL3qzU8fiUluYzR8ADwwUatQBySWobrqkPaP2bdlzguqvG</code>
-        <a class="copy" href="#" data-copy-from="[data-field=wallet-ton]">copy</a></td>
-    </tr>
-  </table>
-
   <h2 id="credits">Credits</h2>
 
-  <!-- AUTHOR: name and links -->
   <table class="release">
-    <tr><th>Map &amp; mod</th><td data-field="author">YOUR NAME HERE</td></tr>
-    <tr><th>Built on</th><td>BepInEx 5, WKMapLoader</td></tr>
+    <tr><th>Map &amp; mod</th><td data-field="author">Mike</td></tr>
+    <tr><th>Built on</th><td>BepInEx 5, WKMapLoader 1.3.2</td></tr>
     <tr><th>Game</th><td>White Knuckle by Dark Machine Games</td></tr>
     <tr><th>Links</th><td>
-      <a href="#" data-link="discord">Discord</a> &middot;
-      <a href="#" data-link="youtube">YouTube</a> &middot;
-      <a href="#" data-link="source">Source</a>
+      <a href="https://github.com/its-mike-dev/track-white-knuckle" rel="noopener">Source (GitHub)</a>
+      <!-- AUTHOR: permanent invite to the WK // Maps & Mods server. Set href back to "#"
+           and this link hides itself again, leaving Source alone on the row. -->
+      <span class="slot"> · <a href="https://discord.gg/Nqj8FjtP8c" data-link="discord" rel="noopener">Discord (WK&nbsp;//&nbsp;Maps&nbsp;&amp;&nbsp;Mods)</a></span>
     </td></tr>
   </table>
+
+  <details id="optional">
+    <summary>Support (optional)</summary>
+    <!-- AUTHOR: any row whose link is still href="#" hides itself; if nothing here is
+         filled in except the wallets, only the wallets show. -->
+    <table class="release" id="optional-table">
+      <tr class="slot">
+        <th>Steam Wishlist</th>
+        <td><a href="https://store.steampowered.com/wishlist/profiles/76561198600435296/" data-link="steam-wishlist" rel="noopener">Steam Wishlist</a></td>
+      </tr>
+      <tr>
+        <th>Ethereum / Base</th>
+        <td><code data-field="wallet-eth">0xD9BeB139E57F91c0851ce076aa109334de6116Eb</code>
+          <a class="copy" href="#" data-copy-from="[data-field=wallet-eth]">copy</a></td>
+      </tr>
+      <tr>
+        <th>Solana</th>
+        <td><code data-field="wallet-sol">6C8fA8g7x1P827MHWAPgfwzLo2iNZuTbfZeMXZP7Yyxr</code>
+          <a class="copy" href="#" data-copy-from="[data-field=wallet-sol]">copy</a></td>
+      </tr>
+      <tr>
+        <th>TON</th>
+        <td><code data-field="wallet-ton">UQBL3qzU8fiUluYzR8ADwwUatQBySWobrqkPaP2bdlzguqvG</code>
+          <a class="copy" href="#" data-copy-from="[data-field=wallet-ton]">copy</a></td>
+      </tr>
+    </table>
+  </details>
 
 </div>
 
