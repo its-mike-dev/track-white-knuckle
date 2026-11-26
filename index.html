@@ -17,12 +17,15 @@
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#install">Installation</a></li>
+      <li><a href="#cli-sidebar">Linux CLI</a></li>
       <li><a href="#notes">Release Notes</a></li>
     </ul>
   </div>
 </div>
 
-<div id="content" class="wrap">
+<div id="content" class="wrap page-grid">
+
+<main class="page-main">
 
   <h1>SISYPHUS // 15</h1>
   <p class="intro">
@@ -78,8 +81,11 @@
 
   <h2 id="install">Installation</h2>
 
-  <p>Requirements: White Knuckle with <a href="https://github.com/BepInEx/BepInEx" rel="noopener">BepInEx&nbsp;5</a>
-     and WKMapLoader 1.3.2 installed.</p>
+  <p>Requirements: White Knuckle with
+     <a href="https://github.com/BepInEx/BepInEx/releases" rel="noopener">BepInEx&nbsp;5&nbsp;(x64)</a>
+     and <a href="https://gcdn.thunderstore.io/live/repository/packages/Lakisa-WKMapLoader-1.3.2.zip" rel="noopener">WKMapLoader&nbsp;1.3.2</a>.</p>
+
+  <h3>Windows / Manual</h3>
 
   <ol class="steps">
     <li>
@@ -97,13 +103,19 @@
             └── maps/
                 └── TRACK_start_test.*</pre>
     </li>
-    <li>Launch White Knuckle, open <strong>Custom Maps</strong> and select <strong>SISYPHUS&nbsp;//&nbsp;15</strong>.</li>
+    <li>Launch White Knuckle, open the <strong>CUSTOM</strong> tab, cycle with <code>&lt;</code> / <code>&gt;</code> to <strong>SISYPHUS&nbsp;//&nbsp;15</strong> and click <strong>PLAY</strong>.</li>
     <li>Press <code>M</code> in game to cycle the tactical map: compact, expanded, off.
       Key and startup state can be changed in
       <code class="path">BepInEx/config/local.whiteknuckle.stations.cfg</code>
       (<code>MapToggleKey</code>, <code>ShowTacticalMap</code>).</li>
     <li>No console commands required — everything starts automatically.</li>
   </ol>
+
+  <h3 id="install-video">Linux install &amp; launch walkthrough (1:19)</h3>
+
+  <video class="install-video" controls muted playsinline preload="metadata" poster="./assets/install_guide_poster.jpg">
+    <source src="./assets/install_guide.mp4" type="video/mp4">
+  </video>
 
   <h2 id="notes">Release notes</h2>
 
@@ -159,6 +171,79 @@
       </tr>
     </table>
   </details>
+
+</main>
+
+<aside id="cli-sidebar" aria-label="Linux and Steam Deck CLI installation">
+  <div class="cli-head">
+    <h2>Linux / Steam Deck (CLI)</h2>
+    <a class="copy" href="#" data-copy-join="#cmd-1,#cmd-2,#cmd-3,#cmd-4,#cmd-5">copy 1–5</a>
+  </div>
+  <p class="cli-note">Clean Steam install step-by-step in terminal. Run each block in order:</p>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>1. Game directory</span>
+      <a class="copy" href="#" data-copy-from="#cmd-1">copy</a>
+    </div>
+    <pre id="cmd-1">WK="$HOME/.local/share/Steam/steamapps/common/White Knuckle"</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>2. Install BepInEx 5.4.23.6 (x64)</span>
+      <a class="copy" href="#" data-copy-from="#cmd-2">copy</a>
+    </div>
+    <pre id="cmd-2">curl -fL -o /tmp/bepinex.zip "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.6/BepInEx_win_x64_5.4.23.6.zip"
+unzip -o /tmp/bepinex.zip -d "$WK"</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>3. Install WKMapLoader 1.3.2</span>
+      <a class="copy" href="#" data-copy-from="#cmd-3">copy</a>
+    </div>
+    <pre id="cmd-3">mkdir -p "$WK/BepInEx/plugins/WKMapLoader"
+curl -fL -o /tmp/wkmaploader.zip "https://gcdn.thunderstore.io/live/repository/packages/Lakisa-WKMapLoader-1.3.2.zip"
+unzip -o /tmp/wkmaploader.zip -d "$WK/BepInEx/plugins/WKMapLoader"</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>4. Install SISYPHUS // 15 (v1.0)</span>
+      <a class="copy" href="#" data-copy-from="#cmd-4">copy</a>
+    </div>
+    <pre id="cmd-4">curl -fL -o /tmp/sisyphus15.zip "https://its-mike-dev.github.io/track-white-knuckle/downloads/SISYPHUS_15_v1.0.zip"
+unzip -o /tmp/sisyphus15.zip -d "$WK/BepInEx/plugins"</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>5. Clean up temp archives</span>
+      <a class="copy" href="#" data-copy-from="#cmd-5">copy</a>
+    </div>
+    <pre id="cmd-5">rm -f /tmp/bepinex.zip /tmp/wkmaploader.zip /tmp/sisyphus15.zip</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>6. Steam Launch Options</span>
+      <a class="copy" href="#" data-copy-from="#cmd-6">copy</a>
+    </div>
+    <p class="cli-step-sub">Steam → White Knuckle → Properties → General</p>
+    <pre id="cmd-6">WINEDLLOVERRIDES="winhttp=n,b" %command%</pre>
+  </div>
+
+  <div class="cli-step">
+    <div class="cli-step-head">
+      <span>7. Launch White Knuckle</span>
+      <a class="copy" href="#" data-copy-from="#cmd-7">copy</a>
+    </div>
+    <pre id="cmd-7">steam steam://rungameid/3195790</pre>
+  </div>
+
+  <p class="cli-foot"><a href="#install-video">Watch 1:19 video walkthrough →</a></p>
+</aside>
 
 </div>
 

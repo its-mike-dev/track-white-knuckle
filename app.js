@@ -35,14 +35,22 @@
     a.addEventListener('click', function (e) {
       e.preventDefault();
       var text = a.getAttribute('data-copy');
-      if (!text) {
+      var joinSel = a.getAttribute('data-copy-join');
+      if (!text && joinSel) {
+        text = joinSel.split(',').map(function (sel) {
+          var n = document.querySelector(sel.trim());
+          return n ? n.textContent.trim() : '';
+        }).filter(Boolean).join('\n');
+      } else if (!text) {
         var node = document.querySelector(a.getAttribute('data-copy-from') || '');
         text = node ? node.textContent.trim() : '';
       }
       if (!text) return;
       copy(text);
+      var orig = a.getAttribute('data-label') || a.textContent;
+      a.setAttribute('data-label', orig);
       a.textContent = 'copied';
-      setTimeout(function () { a.textContent = 'copy'; }, 1200);
+      setTimeout(function () { a.textContent = orig; }, 1200);
     });
   });
 
